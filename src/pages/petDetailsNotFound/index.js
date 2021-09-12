@@ -1,5 +1,7 @@
 import React from 'react';
 
+// render a page that informs user of 404 not found error and allows them navigate back. 
+
 // import useHistory here.
 
 const PetDetailsNotFound = () => {
