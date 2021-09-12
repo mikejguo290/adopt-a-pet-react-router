@@ -16,8 +16,8 @@ function App() {
       <Router>
         <Navigation />
 
-        { /* path renders HomePage when url matches path /:type, where :type is placeholder for pet, matching on :placeholder optional */}
-        <Route path="/:type">
+        { /* path renders HomePage when url matches path /:type, where :type is placeholder for pet, matching on :placeholder? optional */}
+        <Route path="/:type?">
           <HomePage />
         </Route>
       </Router>
