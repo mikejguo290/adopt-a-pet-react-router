@@ -3,6 +3,10 @@ import Hero from '../../components/hero';
 import { getPets } from '../../api/petfinder';
 import Pet from '../../components/pet';
 
+
+// use query search params to make a call to getPets from api/petfinder. this is done with a call to async setPets function, defined inside useEffect();
+// lastly render list of pets. 
+
 // import useLocation here
 
 const SearchPage = () => {
