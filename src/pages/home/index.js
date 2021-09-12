@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { getPets } from '../../api/petfinder';
 import Hero from '../../components/hero';
 import Pet from '../../components/pet';
+import { useParams } from 'react-router-dom'; // extract params from the url, having created path="/:type?" in Route for HomePage.
 
 // fetches pets data and on render or when (pet) type is changed. 
 // renders homepage with <Hero>, pets for adotpion near you and list of grids with pet image & pet attributes. 
 const HomePage = () => {
   const [data, setData] = useState(null);
-  const type = ''; // Fix me!
+  const { type }  = useParams(); // useParams returns an object whose keys are the names of params and values are the params values. 
 
   useEffect(() => {
     async function getPetsData() {
