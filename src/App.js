@@ -13,8 +13,10 @@ a component exported by default in index.js can be thus imported easily, and giv
 function App() {
   return (
     <div>
-      <Navigation />
-      <HomePage />
+      <Router>
+        <Navigation />
+        <HomePage />
+      </Router>
     </div>
   );
 }
