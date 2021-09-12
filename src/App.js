@@ -15,7 +15,11 @@ function App() {
     <div>
       <Router>
         <Navigation />
-        <HomePage />
+
+        { /* path renders HomePage when url matches path /:type, where :type is placeholder for pet, matching on :placeholder optional */}
+        <Route path="/:type">
+          <HomePage />
+        </Route>
       </Router>
     </div>
   );
