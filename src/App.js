@@ -3,7 +3,7 @@ import SearchPage from './pages/search';
 import PetDetailsPage from './pages/detail';
 import PetDetailsNotFound from './pages/petDetailsNotFound';
 import Navigation from './components/navigation';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router , Route } from 'react-router-dom';
 /*
 An index.js file allow you to import its parent folder as a module. 
 how? - when importing a module, js try to find index.js to import by default. 
