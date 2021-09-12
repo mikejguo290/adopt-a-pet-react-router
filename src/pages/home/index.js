@@ -3,6 +3,8 @@ import { getPets } from '../../api/petfinder';
 import Hero from '../../components/hero';
 import Pet from '../../components/pet';
 
+// fetches pets data and on render or when (pet) type is changed. 
+// renders homepage with <Hero>, pets for adotpion near you and list of grids with pet image & pet attributes. 
 const HomePage = () => {
   const [data, setData] = useState(null);
   const type = ''; // Fix me!
