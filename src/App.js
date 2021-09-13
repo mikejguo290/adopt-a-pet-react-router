@@ -3,7 +3,7 @@ import SearchPage from './pages/search';
 import PetDetailsPage from './pages/detail';
 import PetDetailsNotFound from './pages/petDetailsNotFound';
 import Navigation from './components/navigation';
-import { BrowserRouter as Router , Route } from 'react-router-dom';
+import { BrowserRouter as Router , Route, Switch } from 'react-router-dom';
 /*
 An index.js file allow you to import its parent folder as a module. 
 how? - when importing a module, js try to find index.js to import by default. 
@@ -15,14 +15,17 @@ function App() {
     <div>
       <Router>
         <Navigation />
-        { /* Route around petDetailsPage, placed above more general path to HomePage */ }
-        <Route path="/:type/:id">
-          <PetDetailsPage />
-        </Route>
-        { /* path renders HomePage when url matches path /:type, where :type is placeholder for pet, matching on :placeholder? optional */}
-        <Route path="/:type?">
-          <HomePage />
-        </Route>
+        {/* without Switch, Router by default renders all components whose Route's path matches url, so will render PetDetailsPage AND HomePage */}
+        <Switch>
+          { /* Route around petDetailsPage, placed above more general path to HomePage */ }
+          <Route path="/:type/:id">
+            <PetDetailsPage />
+          </Route>
+          { /* path renders HomePage when url matches path /:type, where :type is placeholder for pet, matching on :placeholder? optional */}
+          <Route path="/:type?">
+            <HomePage />
+          </Route>
+        </Switch>
       </Router>
     </div>
   );
