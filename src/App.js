@@ -25,6 +25,10 @@ function App() {
           <Route path="/:type?">
             <HomePage />
           </Route>
+          { /* Create Route to render SearchPage whenever path='/search' */}
+          <Route path='/search'>
+            <SearchPage />
+          </Route>
         </Switch>
       </Router>
     </div>
