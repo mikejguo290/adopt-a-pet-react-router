@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 const PetDetailsNotFound = () => {
 
   // get the history object from useHistory()
-
+  let history = useHistory(); // access React Router's stack like history object.
   const goBack = () => {
     // Go back!
   }
