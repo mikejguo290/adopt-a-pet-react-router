@@ -1,9 +1,9 @@
 import React from 'react';
 
-// render a page that informs user of 404 not found error and allows them navigate back. 
-
 // import useHistory here.
+import { useHistory } from 'react-router-dom';
 
+// render a page that informs user of 404 not found error and allows them navigate back. 
 const PetDetailsNotFound = () => {
 
   // get the history object from useHistory()
