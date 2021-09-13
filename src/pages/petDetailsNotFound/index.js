@@ -10,6 +10,7 @@ const PetDetailsNotFound = () => {
   let history = useHistory(); // access React Router's stack like history object.
   const goBack = () => {
     // Go back!
+    history.goBack(); // use history object's goBack method to redirect user to previous page.
   }
   
   return (
