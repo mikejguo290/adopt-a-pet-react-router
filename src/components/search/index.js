@@ -1,10 +1,14 @@
 import React, { useRef } from 'react';
 
 // import useHistory here.
+// search component is rendered on Navigation as <Search>. this will be used to redirect users to Search Page. (looks similar in src files!)
+import { useHistory } from 'react-router-dom';
 
 const Search = () => {
 
   // get the history object here
+   // use the hook, useHistory here. to imperatively redirect user.
+  let history = useHistory();
 
   const searchInputRef = useRef();
 
@@ -15,7 +19,7 @@ const Search = () => {
       name: searchInputRef.current.value
     }).toString();
 
-    // imperatively redirect with history.push()
+    // imperatively redirect with history.push();
   };
 
   return (
