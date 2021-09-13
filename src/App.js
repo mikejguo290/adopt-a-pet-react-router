@@ -15,7 +15,10 @@ function App() {
     <div>
       <Router>
         <Navigation />
-
+        { /* Route around petDetailsPage, placed above more general path to HomePage */ }
+        <Route path="/:type/:id">
+          <PetDetailsPage />
+        </Route>
         { /* path renders HomePage when url matches path /:type, where :type is placeholder for pet, matching on :placeholder? optional */}
         <Route path="/:type?">
           <HomePage />
