@@ -23,9 +23,9 @@ const SearchPage = () => {
 
   useEffect(() => {
     async function getPetsData() {
-      const petNameToFind = 'REPLACE ME';
+      const petNameToFind = queryParams.get('name'); // queryParams represent an object with a .get(key) method which will return value paired with key.
       const petsData = await getPets('', petNameToFind);
-
+      console.log(petNameToFind);
       setPets(petsData);
     }
 
