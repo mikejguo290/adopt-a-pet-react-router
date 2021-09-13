@@ -17,6 +17,11 @@ function App() {
         <Navigation />
         {/* without Switch, Router by default renders all components whose Route's path matches url, so will render PetDetailsPage AND HomePage */}
         <Switch>
+        { /* Create Route to render SearchPage whenever path='/search', 
+          placing it below Route for HomePage would cause HomePage to render with type of 'search'!*/}
+          <Route path='/search'>
+            <SearchPage />
+          </Route>
           { /* Route around petDetailsPage, placed above more general path to HomePage */ }
           <Route path="/:type/:id">
             <PetDetailsPage />
@@ -24,10 +29,6 @@ function App() {
           { /* path renders HomePage when url matches path /:type, where :type is placeholder for pet, matching on :placeholder? optional */}
           <Route path="/:type?">
             <HomePage />
-          </Route>
-          { /* Create Route to render SearchPage whenever path='/search' */}
-          <Route path='/search'>
-            <SearchPage />
           </Route>
         </Switch>
       </Router>
