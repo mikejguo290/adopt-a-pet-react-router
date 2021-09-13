@@ -10,16 +10,17 @@ const Search = () => {
    // use the hook, useHistory here. to imperatively redirect user.
   let history = useHistory();
 
-  const searchInputRef = useRef();
+  const searchInputRef = useRef(); //? useRef?
 
   const onSearchHandler = (e) => {
     e.preventDefault();
-
-    const searchQuery = new URLSearchParams({
+    
+    const searchQuery = new URLSearchParams({ // construct a search params object with name property. lesson depicted URLSearchParams taking in string!
       name: searchInputRef.current.value
-    }).toString();
+    }).toString(); // Why toString? is it modified for searchQuery?
 
     // imperatively redirect with history.push();
+    history.push(`/search?${searchQuery}`);
   };
 
   return (
