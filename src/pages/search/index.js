@@ -15,8 +15,8 @@ const SearchPage = () => {
   // Get the search value from useLocation() here
   const { search } = useLocation(); // useLocation() hook returns an object with search property. 
 
-  const queryParams = useMemo(() => { 
-    return new URLSearchParams(search);
+  const queryParams = useMemo(() => { // with expensive computation, it is best to use wrap the logic in useMemo()
+    return new URLSearchParams(search); //useMemo hook runs this computation only on first render and when search changes. it returns the computed value on other renders.
   }, [search]);
 
   const [pets, setPets] = useState([]);
