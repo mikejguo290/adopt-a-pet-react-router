@@ -17,7 +17,7 @@ const PetDetailsPage = () => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const { id } = useParams(); // <--- Update me!
+  const { id } = useParams(); // <--- Updated me!
 
   useEffect(() => {
     async function getPetsData() {
@@ -41,8 +41,9 @@ const PetDetailsPage = () => {
       ) : error ? (
         <div>
           {/* Redirect to /pet-details-not-found if there was an error! 
-          if there was an error loading data. state error will be set to true! */}
-
+          if there was an error loading data. state error will be set to true! 
+          redirect to prop accepts url to redirect */}
+          <Redirect to="/pet-details-not-found"/>
         </div>
       ) : (
         <main>
