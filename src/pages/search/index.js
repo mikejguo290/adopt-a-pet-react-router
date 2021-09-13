@@ -4,18 +4,19 @@ import { getPets } from '../../api/petfinder';
 import Pet from '../../components/pet';
 
 
-// use query search params to make a call to getPets from api/petfinder. this is done with a call to async setPets function, defined inside useEffect();
-// lastly render list of pets. 
+/* use query search params to make a call to getPets from api/petfinder. this is done with a call to async setPets function, defined inside useEffect();
+lastly render list of pets. */
 
 // import useLocation here
+import { useLocation } from 'react-router-dom';
 
 const SearchPage = () => {
 
   // Get the search value from useLocation() here
-  const search = 'REPLACE ME';
+  const { search } = useLocation(); // useLocation() hook returns an object with search property. 
 
   const queryParams = useMemo(() => { 
-    return new URLSearchParams('REPLACE ME');
+    return new URLSearchParams(search);
   }, [search]);
 
   const [pets, setPets] = useState([]);
