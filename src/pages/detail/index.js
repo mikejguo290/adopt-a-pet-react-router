@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getPetDetails } from '../../api/petfinder';
 import Hero from '../../components/hero';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 
 // make a call to getPetDetails from api/petfinder to get details of one pet. save it to state data and render it. 
 
@@ -40,7 +40,9 @@ const PetDetailsPage = () => {
         <h3>Loading...</h3>
       ) : error ? (
         <div>
-          {/* Redirect to /pet-details-not-found if there was an error! */}
+          {/* Redirect to /pet-details-not-found if there was an error! 
+          if there was an error loading data. state error will be set to true! */}
+
         </div>
       ) : (
         <main>
