@@ -9,6 +9,8 @@ import { useParams, Link } from 'react-router-dom'; // extract params from the u
 const HomePage = () => {
   const [data, setData] = useState(null);
   const { type }  = useParams(); // useParams returns an object whose keys are the names of params and values are the params values. 
+  /* type is an optional param for the path and also for getPets(), if type isn't present', h3 serves up 'pets available for adoption
+  near you and the data is of all pets. */
 
   useEffect(() => {
     async function getPetsData() {
